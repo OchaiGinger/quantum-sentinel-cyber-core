@@ -72,16 +72,23 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-secondary': 'var(--gradient-secondary)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-background': 'var(--gradient-background)',
+				'gradient-glass': 'var(--gradient-glass)'
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
 				'hover': 'var(--shadow-hover)',
-				'focus': 'var(--shadow-focus)'
+				'focus': 'var(--shadow-focus)',
+				'glass': 'var(--shadow-glass)'
+			},
+			backdropBlur: {
+				'xs': '2px',
+				'glass': '16px'
 			},
 			fontFamily: {
-				'corporate': ['Inter', 'system-ui', 'sans-serif'],
-				'heading': ['Space Grotesk', 'system-ui', 'sans-serif']
+				'glass': ['Inter', 'system-ui', 'sans-serif'],
+				'heading': ['Outfit', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
