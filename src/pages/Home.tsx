@@ -144,12 +144,19 @@ const Home = () => {
           <div className="max-w-md mx-auto">
             <Card className="group hover:shadow-hover transition-all duration-300 bg-card">
               <CardHeader className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">SA</span>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden shadow-card">
+                  <img
+                    src="/sylvanus.png"
+                    alt="Sylvanus Adetu"
+                    className="w-full h-full object-cover"
+                  />  
                 </div>
                 <CardTitle className="text-xl font-heading">Sylvanus Adetu</CardTitle>
-                <CardDescription className="text-primary font-medium">Chief Executive Officer</CardDescription>
+                <CardDescription className="text-primary font-medium">
+                  Chief Executive Officer
+                </CardDescription>
               </CardHeader>
+
               <CardContent className="text-center">
                 <p className="text-muted-foreground mb-6">
                   Leading QuantumSentinel's vision for next-generation cybersecurity solutions 
@@ -179,32 +186,41 @@ const Home = () => {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="group hover:shadow-hover transition-all duration-300 bg-card">
-                <CardHeader>
-                  <Quote className="h-8 w-8 text-primary mb-4" />
-                  <CardDescription className="text-lg italic text-foreground">
-                    "{testimonial.quote}"
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
-                      <span className="text-sm font-bold text-white">
-                        {testimonial.author.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">{testimonial.author}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  {testimonials.map((testimonial, index) => {
+    const firstName = testimonial.author.split(" ")[0].toLowerCase();
+
+    return (
+      <Card
+        key={index}
+        className="group hover:shadow-hover transition-all duration-300 bg-card"
+      >
+        <CardHeader>
+          <Quote className="h-8 w-8 text-primary mb-4" />
+          <CardDescription className="text-lg italic text-foreground">
+            "{testimonial.quote}"
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-full overflow-hidden shadow-card flex-shrink-0">
+              <img
+                src={`/${firstName}.png`}
+                alt={testimonial.author}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="font-medium text-foreground">{testimonial.author}</p>
+              <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+            </div>
           </div>
-          
+        </CardContent>
+      </Card>
+    );
+  })}
+</div>
+
           <div className="text-center mt-8">
             <Button variant="outline" className="hover:bg-primary/5 hover:border-primary transition-all">
               Read More Testimonials
