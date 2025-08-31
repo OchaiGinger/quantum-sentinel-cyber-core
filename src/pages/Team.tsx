@@ -87,60 +87,63 @@ const Team = () => {
       </section>
 
       {/* Team Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="group hover:shadow-hover transition-all duration-300 bg-card border-border">
-                <CardHeader className="text-center">
-                  <div className="relative mx-auto mb-6">
-                    {member.image ? (
-                      <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-card">
-                        <img 
-                          src={member.image} 
-                          alt={`${member.name} - ${member.role}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ) : (
-                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-primary flex items-center justify-center shadow-card">
-                        <span className="text-2xl font-bold text-white">{member.initials}</span>
-                      </div>
-                    )}
-                  </div>
-                  <CardTitle className="text-xl font-heading">{member.name}</CardTitle>
-                  <CardDescription className="text-primary font-medium text-lg">
-                    {member.role}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {member.bio}
-                  </p>
-                  <div className="flex justify-center space-x-3">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="hover:bg-primary/5 hover:border-primary transition-all"
-                    >
-                      <Linkedin className="h-4 w-4 mr-2" />
-                      LinkedIn
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="hover:bg-primary/5 hover:border-primary transition-all"
-                    >
-                      <Mail className="h-4 w-4 mr-2" />
-                      Contact
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+     {/* Team Grid */}
+<section className="py-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {teamMembers.map((member, index) => {
+        // Grab first name in lowercase (e.g. "sylvanus")
+        const firstName = member.name.split(" ")[0].toLowerCase();
+
+        return (
+          <Card
+            key={index}
+            className="group hover:shadow-hover transition-all duration-300 bg-card border-border"
+          >
+            <CardHeader className="text-center">
+              <div className="relative mx-auto mb-6">
+                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-card">
+                  <img
+                    src={`/${firstName}.jpg`}
+                    alt={`${member.name} - ${member.role}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <CardTitle className="text-xl font-heading">{member.name}</CardTitle>
+              <CardDescription className="text-primary font-medium text-lg">
+                {member.role}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                {member.bio}
+              </p>
+              <div className="flex justify-center space-x-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="hover:bg-primary/5 hover:border-primary transition-all"
+                >
+                  <Linkedin className="h-4 w-4 mr-2" />
+                  LinkedIn
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="hover:bg-primary/5 hover:border-primary transition-all"
+                >
+                  <Mail className="h-4 w-4 mr-2" />
+                  Contact
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* Full Testimonials */}
       <section className="py-20 bg-secondary">
