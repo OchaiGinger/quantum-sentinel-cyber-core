@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, Lock, Eye, Network, Quote } from 'lucide-react';
 import heroImage from '@/assets/corporate-hero.jpg';
-import Link from 'next/link'
+import Link from "next/link";
 
 const Home = () => {
   const services = [
@@ -150,20 +150,20 @@ const Home = () => {
                 <CardTitle className="text-xl font-heading">Sylvanus Adetu</CardTitle>
                 <CardDescription className="text-primary font-medium">Chief Executive Officer</CardDescription>
               </CardHeader>
-<CardContent className="text-center">
-  <p className="text-muted-foreground mb-6">
-    Leading QuantumSentinel's vision for next-generation cybersecurity solutions 
-    with over 15 years of experience in enterprise security.
-  </p>
-  <Link href="/team" passHref>
-    <Button
-      variant="outline"
-      className="hover:bg-primary/5 hover:border-primary transition-all"
-    >
-      Meet the Full Team4
-    </Button>
-  </Link>
-</CardContent>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground mb-6">
+                  Leading QuantumSentinel's vision for next-generation cybersecurity solutions 
+                  with over 15 years of experience in enterprise security.
+                </p>
+                <Link href="/team" passHref>
+                  <Button
+                    variant="outline"
+                    className="hover:bg-primary/5 hover:border-primary transition-all"
+                  >
+                    Meet the Full Team4
+                  </Button>
+                </Link>
+              </CardContent>
 
             </Card>
           </div>
