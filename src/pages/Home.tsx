@@ -160,7 +160,7 @@ const Home = () => {
                     variant="outline"
                     className="hover:bg-primary/5 hover:border-primary transition-all"
                   >
-                    Meet the Full Team s
+                    Meet the Full Team
                   </Button>
                 </Link>
               </CardContent>
