@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, Lock, Eye, Network, Quote } from 'lucide-react';
 import heroImage from '@/assets/corporate-hero.jpg';
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const services = [
@@ -155,12 +155,12 @@ const Home = () => {
                   Leading QuantumSentinel's vision for next-generation cybersecurity solutions 
                   with over 15 years of experience in enterprise security.
                 </p>
-                <Link href="/team" passHref>
+                <Link to="/team">
                   <Button
                     variant="outline"
                     className="hover:bg-primary/5 hover:border-primary transition-all"
                   >
-                    Meet the Full Team4
+                    Meet the Full Team s
                   </Button>
                 </Link>
               </CardContent>
