@@ -104,7 +104,7 @@ const Team = () => {
               <div className="relative mx-auto mb-6">
                 <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-card">
                   <img
-                    src={`/${firstName}.jpg`}
+                    src={`/${firstName}.png`}
                     alt={`${member.name} - ${member.role}`}
                     className="w-full h-full object-cover"
                   />
@@ -145,50 +145,61 @@ const Team = () => {
   </div>
 </section>
 
-      {/* Full Testimonials */}
-      <section className="py-20 bg-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-              Client Testimonials
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear from organizations who trust QuantumSentinel to protect their digital assets
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="group hover:shadow-hover transition-all duration-300 bg-card border-border h-full">
-                <CardHeader>
-                  <Quote className="h-6 w-6 text-primary mb-4" />
-                  <CardDescription className="text-foreground italic leading-relaxed">
-                    "{testimonial.quote}"
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                        <span className="text-xs font-bold text-white">
-                          {testimonial.author.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-medium text-foreground text-sm">{testimonial.author}</p>
-                        <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground pl-11">
-                      {testimonial.company}
-                    </p>
+ {/* Full Testimonials */}
+<section className="py-20 bg-secondary">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+        Client Testimonials
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Hear from organizations who trust QuantumSentinel to protect their digital assets
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonials.map((testimonial, index) => {
+        // Extract first name in lowercase for image filename
+        const firstName = testimonial.author.split(" ")[0].toLowerCase();
+
+        return (
+          <Card
+            key={index}
+            className="group hover:shadow-hover transition-all duration-300 bg-card border-border h-full"
+          >
+            <CardHeader>
+              <Quote className="h-6 w-6 text-primary mb-4" />
+              <CardDescription className="text-foreground italic leading-relaxed">
+                "{testimonial.quote}"
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden shadow-card flex-shrink-0">
+                    <img
+                      src={`/${firstName}.png`}
+                      alt={testimonial.author}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-foreground text-sm">{testimonial.author}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground pl-12">
+                  {testimonial.company}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
       {/* Final CTA */}
       <section className="py-20 bg-gradient-primary">
