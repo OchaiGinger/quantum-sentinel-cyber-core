@@ -35,7 +35,7 @@ const Team = () => {
   const testimonials = [
     {
       quote: "QuantumSentinel's quantum-safe encryption has future-proofed our entire digital infrastructure. Their team's expertise is unmatched.",
-      author: "Dr. Sarah Chen",
+      author: "Sarah Chen",
       role: "CISO, TechFlow Industries",
       company: "Fortune 500 Technology Company"
     },
