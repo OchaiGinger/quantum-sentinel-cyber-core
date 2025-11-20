@@ -49,11 +49,11 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-tight">
-                QuantumSentinel – 
+                QuantumSentinel –
                 <span className="text-primary"> Redefining Cyber Defense</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground max-w-lg">
-                Next-generation cybersecurity solutions powered by AI and quantum-safe technology, 
+                Next-generation cybersecurity solutions powered by AI and quantum-safe technology,
                 engineered to protect your digital ecosystem at scale.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -67,9 +67,9 @@ const Home = () => {
             </div>
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg shadow-card">
-                <img 
-                  src={heroImage} 
-                  alt="Holographic security shield protecting digital infrastructure" 
+                <img
+                  src={heroImage}
+                  alt="Holographic security shield protecting digital infrastructure"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-primary opacity-10" />
@@ -87,8 +87,8 @@ const Home = () => {
               Our Mission
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              QuantumSentinel delivers next-generation cybersecurity built for the post-quantum era. 
-              We combine AI, quantum-safe cryptography, and IoT threat detection to protect digital 
+              QuantumSentinel delivers next-generation cybersecurity built for the post-quantum era.
+              We combine AI, quantum-safe cryptography, and IoT threat detection to protect digital
               ecosystems at scale, ensuring your organization stays ahead of evolving cyber threats.
             </p>
           </div>
@@ -106,7 +106,7 @@ const Home = () => {
               Comprehensive cybersecurity solutions designed for modern digital infrastructure
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service, index) => {
               const IconComponent = service.icon;
@@ -140,18 +140,18 @@ const Home = () => {
               Meet Our Leadership
             </h2>
           </div>
-          
+
           <div className="max-w-md mx-auto">
             <Card className="group hover:shadow-hover transition-all duration-300 bg-card">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden shadow-card">
                   <img
-                    src="/sylvanus.png"
-                    alt="Sylvanus Adetu"
+                    src="/onjefu.png"
+                    alt="Onjefu Adetu"
                     className="w-full h-full object-cover"
-                  />  
+                  />
                 </div>
-                <CardTitle className="text-xl font-heading">Sylvanus Adetu</CardTitle>
+                <CardTitle className="text-xl font-heading">Onjefu Adetu</CardTitle>
                 <CardDescription className="text-primary font-medium">
                   Chief Executive Officer
                 </CardDescription>
@@ -159,7 +159,7 @@ const Home = () => {
 
               <CardContent className="text-center">
                 <p className="text-muted-foreground mb-6">
-                  Leading QuantumSentinel's vision for next-generation cybersecurity solutions 
+                  Leading QuantumSentinel's vision for next-generation cybersecurity solutions
                   with over 15 years of experience in enterprise security.
                 </p>
                 <Link to="/team">
@@ -185,41 +185,41 @@ const Home = () => {
               What Our Clients Say
             </h2>
           </div>
-          
-     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-  {testimonials.map((testimonial, index) => {
-    const firstName = testimonial.author.split(" ")[0].toLowerCase();
 
-    return (
-      <Card
-        key={index}
-        className="group hover:shadow-hover transition-all duration-300 bg-card"
-      >
-        <CardHeader>
-          <Quote className="h-8 w-8 text-primary mb-4" />
-          <CardDescription className="text-lg italic text-foreground">
-            "{testimonial.quote}"
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden shadow-card flex-shrink-0">
-              <img
-                src={`/${firstName}.png`}
-                alt={testimonial.author}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="font-medium text-foreground">{testimonial.author}</p>
-              <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => {
+              const firstName = testimonial.author.split(" ")[0].toLowerCase();
+
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-hover transition-all duration-300 bg-card"
+                >
+                  <CardHeader>
+                    <Quote className="h-8 w-8 text-primary mb-4" />
+                    <CardDescription className="text-lg italic text-foreground">
+                      "{testimonial.quote}"
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 rounded-full overflow-hidden shadow-card flex-shrink-0">
+                        <img
+                          src={`/${firstName}.png`}
+                          alt={testimonial.author}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
-        </CardContent>
-      </Card>
-    );
-  })}
-</div>
 
           <div className="text-center mt-8">
             <Button variant="outline" className="hover:bg-primary/5 hover:border-primary transition-all">
