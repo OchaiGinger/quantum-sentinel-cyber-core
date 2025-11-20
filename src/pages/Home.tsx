@@ -151,7 +151,7 @@ const Home = () => {
                     className="w-full h-full object-cover"
                   />  
                 </div>
-                <CardTitle className="text-xl font-heading">Sylvanus Adetu</CardTitle>
+                <CardTitle className="text-xl font-heading">Onjefu Adetu</CardTitle>
                 <CardDescription className="text-primary font-medium">
                   Chief Executive Officer
                 </CardDescription>
