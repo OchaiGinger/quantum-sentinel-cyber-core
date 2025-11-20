@@ -6,14 +6,14 @@ import ceoImage from '@/assets/ceo-portrait.jpg';
 const Team = () => {
   const teamMembers = [
     {
-      name: "Sylvanus Adetu",
+      name: "Onjefu Adetu",
       role: "Chief Executive Officer",
       image: ceoImage,
       bio: "Leading QuantumSentinel's vision for next-generation cybersecurity with over 15 years of experience in enterprise security and quantum computing research.",
       initials: "SA"
     },
     {
-      name: "Ngozi Nwankwo",
+      name: "Agnes Ukwa",
       role: "Chief Security Architect",
       bio: "Expert in designing quantum-safe cryptographic systems with extensive background in advanced threat detection and AI security implementations.",
       initials: "NN"
@@ -80,125 +80,125 @@ const Team = () => {
             Meet Our <span className="text-primary">Expert Team</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Cybersecurity pioneers with deep expertise in quantum-safe technologies, 
+            Cybersecurity pioneers with deep expertise in quantum-safe technologies,
             AI-driven threat detection, and enterprise security architecture.
           </p>
         </div>
       </section>
 
       {/* Team Grid */}
-     {/* Team Grid */}
-<section className="py-20">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {teamMembers.map((member, index) => {
-        // Grab first name in lowercase (e.g. "sylvanus")
-        const firstName = member.name.split(" ")[0].toLowerCase();
+      {/* Team Grid */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {teamMembers.map((member, index) => {
+              // Grab first name in lowercase (e.g. "sylvanus")
+              const firstName = member.name.split(" ")[0].toLowerCase();
 
-        return (
-          <Card
-            key={index}
-            className="group hover:shadow-hover transition-all duration-300 bg-card border-border"
-          >
-            <CardHeader className="text-center">
-              <div className="relative mx-auto mb-6">
-                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-card">
-                  <img
-                    src={`/${firstName}.png`}
-                    alt={`${member.name} - ${member.role}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <CardTitle className="text-xl font-heading">{member.name}</CardTitle>
-              <CardDescription className="text-primary font-medium text-lg">
-                {member.role}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="text-center space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
-                {member.bio}
-              </p>
-              <div className="flex justify-center space-x-3">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="hover:bg-primary/5 hover:border-primary transition-all"
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-hover transition-all duration-300 bg-card border-border"
                 >
-                  <Linkedin className="h-4 w-4 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="hover:bg-primary/5 hover:border-primary transition-all"
+                  <CardHeader className="text-center">
+                    <div className="relative mx-auto mb-6">
+                      <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-card">
+                        <img
+                          src={`/${firstName}.png`}
+                          alt={`${member.name} - ${member.role}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl font-heading">{member.name}</CardTitle>
+                    <CardDescription className="text-primary font-medium text-lg">
+                      {member.role}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {member.bio}
+                    </p>
+                    <div className="flex justify-center space-x-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="hover:bg-primary/5 hover:border-primary transition-all"
+                      >
+                        <Linkedin className="h-4 w-4 mr-2" />
+                        LinkedIn
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="hover:bg-primary/5 hover:border-primary transition-all"
+                      >
+                        <Mail className="h-4 w-4 mr-2" />
+                        Contact
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Full Testimonials */}
+      <section className="py-20 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+              Client Testimonials
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hear from organizations who trust QuantumSentinel to protect their digital assets
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => {
+              // Extract first name in lowercase for image filename
+              const firstName = testimonial.author.split(" ")[0].toLowerCase();
+
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-hover transition-all duration-300 bg-card border-border h-full"
                 >
-                  <Mail className="h-4 w-4 mr-2" />
-                  Contact
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        );
-      })}
-    </div>
-  </div>
-</section>
-
- {/* Full Testimonials */}
-<section className="py-20 bg-secondary">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-        Client Testimonials
-      </h2>
-      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Hear from organizations who trust QuantumSentinel to protect their digital assets
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {testimonials.map((testimonial, index) => {
-        // Extract first name in lowercase for image filename
-        const firstName = testimonial.author.split(" ")[0].toLowerCase();
-
-        return (
-          <Card
-            key={index}
-            className="group hover:shadow-hover transition-all duration-300 bg-card border-border h-full"
-          >
-            <CardHeader>
-              <Quote className="h-6 w-6 text-primary mb-4" />
-              <CardDescription className="text-foreground italic leading-relaxed">
-                "{testimonial.quote}"
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-full overflow-hidden shadow-card flex-shrink-0">
-                    <img
-                      src={`/${firstName}.png`}
-                      alt={testimonial.author}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-medium text-foreground text-sm">{testimonial.author}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground pl-12">
-                  {testimonial.company}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        );
-      })}
-    </div>
-  </div>
-</section>
+                  <CardHeader>
+                    <Quote className="h-6 w-6 text-primary mb-4" />
+                    <CardDescription className="text-foreground italic leading-relaxed">
+                      "{testimonial.quote}"
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 rounded-full overflow-hidden shadow-card flex-shrink-0">
+                          <img
+                            src={`/${firstName}.png`}
+                            alt={testimonial.author}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-foreground text-sm">{testimonial.author}</p>
+                          <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                        </div>
+                      </div>
+                      <p className="text-xs text-muted-foreground pl-12">
+                        {testimonial.company}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
 
       {/* Final CTA */}
@@ -211,8 +211,8 @@ const Team = () => {
             <p className="text-xl text-white/90 leading-relaxed">
               Ready to transform your cybersecurity posture with quantum-safe solutions?
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="secondary"
               className="bg-white text-primary hover:bg-white/90 hover:shadow-hover transition-all text-lg px-8 py-4"
             >
