@@ -6,7 +6,7 @@ import ceoImage from '@/assets/ceo-portrait.jpg';
 const Team = () => {
   const teamMembers = [
     {
-      name: "Sylvanus Adetu",
+      name: "Onjefu Adetu",
       role: "Chief Executive Officer",
       image: ceoImage,
       bio: "Leading QuantumSentinel's vision for next-generation cybersecurity with over 15 years of experience in enterprise security and quantum computing research.",
